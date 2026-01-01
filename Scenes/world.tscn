@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv38ndo0tm24w"]
+
+[ext_resource type="PackedScene" uid="uid://dvfyy8p53u534" path="res://Scenes/player.tscn" id="1_44y2l"]
+[ext_resource type="PackedScene" uid="uid://hfpuydqnb1ho" path="res://Scenes/mud.tscn" id="2_24sf1"]
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 1408, 0, 1408, -512, 0, -512, 0, -128)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D"]
+points = PackedVector2Array(0, 0, 1408, 0, 1408, -512, 0, -512, 0, -128)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_44y2l")]
+position = Vector2(200, -384)
+
+[node name="Mud" parent="." instance=ExtResource("2_24sf1")]
+position = Vector2(768, 0)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://hfpuydqnb1ho"]
+
+[ext_resource type="Script" path="res://Scripts/terrian_effects/mud.gd" id="1_uujlk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpiov"]
+size = Vector2(384, 32)
+
+[node name="Mud" type="Area2D"]
+script = ExtResource("1_uujlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cpiov")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
