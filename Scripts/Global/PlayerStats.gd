@@ -1,5 +1,7 @@
 extends Node
 
+var is_weapon_lost: bool = false
+
 var weapons = [null, "rusty_blade", "blade", "gun"]
 var ability = [null, "energy_orb", "stone_wall"]
 var gadget = [null, "wing_boots", "mud_boots"]
@@ -13,6 +15,11 @@ var loadout = {
 	"ability": ability[curr_ability],
 	"gadget": gadget[curr_gadget]
 }
+
+func lost_weapon() -> void:
+	curr_weapon = 0
+	loadout.weapon = weapons[curr_weapon]
+	is_weapon_lost = true
 
 func next_weapon() -> void:
 	curr_weapon = (curr_weapon + 1) % weapons.size()

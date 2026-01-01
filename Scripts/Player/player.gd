@@ -9,6 +9,8 @@ var can_double_jump: bool = true;
 
 @export var GRAVITY: int = 980;
 
+@onready var weapon_controller: Node2D = $WeaponController
+
 func _ready() -> void:
 	add_to_group("Player")
 
@@ -18,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	horizontal_movment(direction, delta)
 	apply_gravity()
 	jump()
+	attack()
 	
 	switch_loadout()
 	move_and_slide()
@@ -42,6 +45,11 @@ func jump() -> void:
 		elif !is_on_floor() and PlayerStats.loadout.gadget == "wing_boots" and can_double_jump:
 			velocity.y = -JUMP_FORCE * JUMP_FACTOR
 			can_double_jump = false
+
+func attack() -> void:
+	# attack logci
+	if Input.is_action_just_pressed("attack"):
+		weapon_controller.attack()
 
 func switch_loadout() -> void:
 	# temporary logic to change loadout with button input
