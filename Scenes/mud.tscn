@@ -1,12 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://hfpuydqnb1ho"]
+[gd_scene load_steps=5 format=3 uid="uid://hfpuydqnb1ho"]
 
 [ext_resource type="Script" path="res://Scripts/terrian_effects/mud.gd" id="1_uujlk"]
+
+[sub_resource type="Gradient" id="Gradient_24v7u"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_emp6y"]
+gradient = SubResource("Gradient_24v7u")
+fill_from = Vector2(0, 0.0366972)
+fill_to = Vector2(0, 1)
+repeat = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpiov"]
 size = Vector2(384, 32)
 
 [node name="Mud" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_uujlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6, 0.5)
+texture = SubResource("GradientTexture2D_emp6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cpiov")

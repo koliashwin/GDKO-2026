@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvfyy8p53u534"]
+
+[ext_resource type="Texture2D" uid="uid://0s1tnv7rkhyp" path="res://icon.svg" id="1_87es3"]
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_gvkkr"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerLoadout/weapon_controller.gd" id="3_ak86g"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerLoadout/ability_controller.gd" id="4_57ay2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eee3h"]
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qyg0"]
+size = Vector2(128, 144)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gvkkr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 1)
+texture = ExtResource("1_87es3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eee3h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WeaponController" type="Node2D" parent="."]
+script = ExtResource("3_ak86g")
+
+[node name="MeleeHitbox" type="Area2D" parent="WeaponController"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponController/MeleeHitbox"]
+position = Vector2(88, 0)
+shape = SubResource("RectangleShape2D_2qyg0")
+
+[node name="AbilityController" type="Node2D" parent="."]
+script = ExtResource("4_57ay2")
+
+[node name="OrbSpawner" type="Node2D" parent="AbilityController"]
+
+[node name="WallSpawner" type="Node2D" parent="AbilityController"]
+
+[connection signal="body_entered" from="WeaponController/MeleeHitbox" to="WeaponController" method="_on_melee_hitbox_body_entered"]

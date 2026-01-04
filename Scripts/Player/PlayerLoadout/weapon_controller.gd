@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var hitbox: Area2D = $MeleeHitbox
-
+@onready var visual_controller: Node2D = $"../VisualsController"
 var is_attacking: bool
 
 func _ready() -> void:
@@ -13,6 +13,8 @@ func attack() -> void:
 		print("dont have weapon to attack")
 		return
 	
+	visual_controller.play_attack()
+	
 	match PlayerStats.loadout.weapon:
 		"rusty_blade": rusty_attack()
 		"blade": slash_attack()
@@ -20,22 +22,24 @@ func attack() -> void:
 		null: no_weapon()
 
 func start_attack(duration: float) -> void:
-	hitbox.monitoring = true
 	is_attacking = true
-	print("hit box monitoring")
+	hitbox.monitoring = true
 	await get_tree().create_timer(duration).timeout
 	hitbox.monitoring = false
 	is_attacking = false
-	print("hit box not monitoring")
 
 func rusty_attack() -> void:
 	if is_attacking:
 		return
 	if randf() < 0.2:
-		print('sword is stuck')
+		var lost_sword = preload("res://Scenes/lost_weapon.tscn")
+		var rusty_sword = lost_sword.instantiate()
+		get_tree().current_scene.add_child(rusty_sword)
+		rusty_sword.position = global_position
+		
 		PlayerStats.lost_weapon()
 		return
-	start_attack(0.3)
+	start_attack(0.5)
 	print('rusty attack')
 
 func slash_attack() -> void:
@@ -53,4 +57,5 @@ func no_weapon() -> void:
 
 
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
-	pass # enemy health reduction logic goes here
+	if body.is_in_group("Enemies"):
+		body.take_damage(2)

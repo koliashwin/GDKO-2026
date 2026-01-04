@@ -1,0 +1,421 @@
+[gd_scene load_steps=64 format=3 uid="uid://dvfyy8p53u534"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_gvkkr"]
+[ext_resource type="Texture2D" uid="uid://c6iv4tbmpncie" path="res://Assets/Sprites/player_body0013.png" id="2_ska8s"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerLoadout/visuals_controller.gd" id="2_udscg"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerLoadout/weapon_controller.gd" id="3_ak86g"]
+[ext_resource type="Texture2D" uid="uid://badykqct3kwv0" path="res://Assets/Sprites/player_body0051.png" id="3_nnegq"]
+[ext_resource type="Texture2D" uid="uid://d16evrelf2wtk" path="res://Assets/Sprites/player_body0014.png" id="3_rwnro"]
+[ext_resource type="Texture2D" uid="uid://ca7smkxcfxt60" path="res://Assets/Sprites/player_body0000.png" id="4_1qb53"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerLoadout/ability_controller.gd" id="4_57ay2"]
+[ext_resource type="Texture2D" uid="uid://cm07bevkbt64r" path="res://Assets/Sprites/player_body0052.png" id="4_g6a7a"]
+[ext_resource type="Texture2D" uid="uid://dentj0cj4o0wn" path="res://Assets/Sprites/player_body0008.png" id="5_ltcy3"]
+[ext_resource type="Texture2D" uid="uid://ct4pjrptrykof" path="res://Assets/Sprites/player_body0009.png" id="6_8wak3"]
+[ext_resource type="Texture2D" uid="uid://cwxva1aieesiu" path="res://Assets/Sprites/player_body0010.png" id="7_ifl6o"]
+[ext_resource type="Texture2D" uid="uid://sbbh0wsagt4a" path="res://Assets/Sprites/player_body0001.png" id="8_18jdc"]
+[ext_resource type="Texture2D" uid="uid://b7ron8dtpcb7o" path="res://Assets/Sprites/player_body0002.png" id="9_637xm"]
+[ext_resource type="Texture2D" uid="uid://b5rl0hmnaujno" path="res://Assets/Sprites/player_body0003.png" id="10_6piw1"]
+[ext_resource type="Texture2D" uid="uid://icb1nj6wj1nc" path="res://Assets/Sprites/player_body0007.png" id="11_ktvyi"]
+[ext_resource type="Texture2D" uid="uid://dkt3wn8nj72f4" path="res://Assets/Sprites/player_body0004.png" id="12_fj3dw"]
+[ext_resource type="Texture2D" uid="uid://dhgac6x5em0g8" path="res://Assets/Sprites/player_sword0038.png" id="14_mvatp"]
+[ext_resource type="Texture2D" uid="uid://q3an4am31uv0" path="res://Assets/Sprites/player_sword0044.png" id="15_aubqp"]
+[ext_resource type="Texture2D" uid="uid://ctsflh6fa80p6" path="res://Assets/Sprites/player_sword0039.png" id="15_erw5v"]
+[ext_resource type="Texture2D" uid="uid://govbj1osoxo4" path="res://Assets/Sprites/player_body0059.png" id="16_8s24f"]
+[ext_resource type="Texture2D" uid="uid://dg5ltvusrp7" path="res://Assets/Sprites/player_sword0018.png" id="16_ethj4"]
+[ext_resource type="Texture2D" uid="uid://bfdl5nbmp65f3" path="res://Assets/Sprites/player_sword0045.png" id="16_xni1c"]
+[ext_resource type="Texture2D" uid="uid://bi3j4onrl6bif" path="res://Assets/Sprites/player_sword0032.png" id="17_8o52g"]
+[ext_resource type="Texture2D" uid="uid://bas5kiwhprj2f" path="res://Assets/Sprites/player_body0061.png" id="17_a05xr"]
+[ext_resource type="Texture2D" uid="uid://diyv6v5jbh8yg" path="res://Assets/Sprites/player_sword0046.png" id="17_qtdii"]
+[ext_resource type="Texture2D" uid="uid://ciifyhmbbl24f" path="res://Assets/Sprites/player_sword0033.png" id="18_gb5kp"]
+[ext_resource type="Texture2D" uid="uid://bd434w5dpobyw" path="res://Assets/Sprites/player_body0062.png" id="18_qnscg"]
+[ext_resource type="Texture2D" uid="uid://b475k4kxi3uox" path="res://Assets/Sprites/player_sword0034.png" id="19_gta8u"]
+[ext_resource type="Texture2D" uid="uid://64prbtuwns2i" path="res://Assets/Sprites/player_sword0027.png" id="20_x8hf5"]
+[ext_resource type="Texture2D" uid="uid://dswyqprym6fx" path="res://Assets/Sprites/player_gun0038.png" id="21_s8t3o"]
+[ext_resource type="Texture2D" uid="uid://vptr4bkmojxs" path="res://Assets/Sprites/player_gun0039.png" id="22_o63x4"]
+[ext_resource type="Texture2D" uid="uid://c5qy7pj8dnku1" path="res://Assets/Sprites/player_gun0018.png" id="23_w0i38"]
+[ext_resource type="Texture2D" uid="uid://ke64g3gku4cj" path="res://Assets/Sprites/player_gun0032.png" id="24_8lh0w"]
+[ext_resource type="Texture2D" uid="uid://c67nhycgo47na" path="res://Assets/Sprites/player_gun0033.png" id="25_sm7kl"]
+[ext_resource type="Texture2D" uid="uid://b7lrs2fwvif1w" path="res://Assets/Sprites/player_gun0047.png" id="25_t5erc"]
+[ext_resource type="Texture2D" uid="uid://c6qb7p5aqr6kt" path="res://Assets/Sprites/player_gun0034.png" id="26_raeor"]
+[ext_resource type="Texture2D" uid="uid://bphqurrcdw6g2" path="res://Assets/Sprites/player_gun0027.png" id="27_3i8na"]
+[ext_resource type="Texture2D" uid="uid://bdigsg6gbei4x" path="res://Assets/Sprites/player_weapon0013.png" id="28_srdr5"]
+[ext_resource type="Texture2D" uid="uid://c6fjv83r2dwef" path="res://Assets/Sprites/player_weapon0014.png" id="29_lpwku"]
+[ext_resource type="Texture2D" uid="uid://c5pcs1tmmyr6c" path="res://Assets/Sprites/player_weapon0000.png" id="30_ck1us"]
+[ext_resource type="Texture2D" uid="uid://8m8nm0q5kbw3" path="res://Assets/Sprites/player_weapon0008.png" id="31_bqbsv"]
+[ext_resource type="Texture2D" uid="uid://c0cu7xu3v41m7" path="res://Assets/Sprites/player_weapon0051.png" id="32_cfuj3"]
+[ext_resource type="Texture2D" uid="uid://6dfdqbhab401" path="res://Assets/Sprites/player_weapon0009.png" id="32_rkglg"]
+[ext_resource type="Texture2D" uid="uid://bog3lv53wwy27" path="res://Assets/Sprites/player_weapon0010.png" id="33_0wlpq"]
+[ext_resource type="Texture2D" uid="uid://b08shis42hmxm" path="res://Assets/Sprites/player_weapon0052.png" id="33_cidvv"]
+[ext_resource type="Texture2D" uid="uid://g1vmitlfeljk" path="res://Assets/Sprites/player_weapon0001.png" id="34_g0v03"]
+[ext_resource type="Texture2D" uid="uid://c1whjdxsjy83m" path="res://Assets/Sprites/player_weapon0003.png" id="35_hf8t2"]
+[ext_resource type="Texture2D" uid="uid://xcele7npqpvc" path="res://Assets/Sprites/player_weapon0007.png" id="36_jggsg"]
+[ext_resource type="Texture2D" uid="uid://y0anqompnak1" path="res://Assets/Sprites/player_weapon0044.png" id="37_1h53i"]
+[ext_resource type="Texture2D" uid="uid://410yt7mxilef" path="res://Assets/Sprites/player_weapon0045.png" id="38_svxky"]
+[ext_resource type="Texture2D" uid="uid://buxhhq6qg6qvc" path="res://Assets/Sprites/player_weapon0046.png" id="39_t01cu"]
+[ext_resource type="Texture2D" uid="uid://cdsx85v6q4oqw" path="res://Assets/Sprites/player_weapon0038.png" id="40_3k6nx"]
+[ext_resource type="Texture2D" uid="uid://b28wkinm4pk5v" path="res://Assets/Sprites/player_weapon0039.png" id="41_4xuf0"]
+[ext_resource type="Texture2D" uid="uid://ddhvgw7btlhdj" path="res://Assets/Sprites/player_weapon0018.png" id="42_ynjmg"]
+[ext_resource type="Texture2D" uid="uid://d0mk1olih120u" path="res://Assets/Sprites/player_weapon0032.png" id="43_kn4wl"]
+[ext_resource type="Texture2D" uid="uid://b4rmey2i64dns" path="res://Assets/Sprites/player_weapon0033.png" id="44_dlikd"]
+[ext_resource type="Texture2D" uid="uid://b80052r0wqgv" path="res://Assets/Sprites/player_weapon0034.png" id="45_atflq"]
+[ext_resource type="Texture2D" uid="uid://b6kd131dah26f" path="res://Assets/Sprites/player_weapon0027.png" id="46_12dyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycwss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nnegq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g6a7a")
+}],
+"loop": false,
+"name": &"energy_orb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ska8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rwnro")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1qb53")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ltcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8wak3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ifl6o")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1qb53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_18jdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_637xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6piw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ktvyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fj3dw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_8s24f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a05xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qnscg")
+}],
+"loop": false,
+"name": &"stone_wall",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63p81"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("15_aubqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xni1c")
+}, {
+"duration": 0.25,
+"texture": ExtResource("17_qtdii")
+}],
+"loop": false,
+"name": &"blade_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mvatp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_erw5v")
+}],
+"loop": true,
+"name": &"blade_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ethj4")
+}],
+"loop": true,
+"name": &"blade_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_8o52g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gb5kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gta8u")
+}],
+"loop": false,
+"name": &"blade_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ethj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_x8hf5")
+}],
+"loop": true,
+"name": &"blade_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("25_t5erc")
+}],
+"loop": false,
+"name": &"gun_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_s8t3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_o63x4")
+}],
+"loop": true,
+"name": &"gun_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_w0i38")
+}],
+"loop": true,
+"name": &"gun_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_8lh0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sm7kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_raeor")
+}],
+"loop": false,
+"name": &"gun_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_w0i38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3i8na")
+}],
+"loop": true,
+"name": &"gun_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_cfuj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cidvv")
+}],
+"loop": false,
+"name": &"null_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_srdr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lpwku")
+}],
+"loop": true,
+"name": &"null_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ck1us")
+}],
+"loop": true,
+"name": &"null_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_bqbsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rkglg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0wlpq")
+}],
+"loop": false,
+"name": &"null_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ck1us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_g0v03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hf8t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jggsg")
+}],
+"loop": true,
+"name": &"null_run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_1h53i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_svxky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_t01cu")
+}],
+"loop": false,
+"name": &"rusty_blade_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_3k6nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4xuf0")
+}],
+"loop": true,
+"name": &"rusty_blade_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_ynjmg")
+}],
+"loop": true,
+"name": &"rusty_blade_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_kn4wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dlikd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_atflq")
+}],
+"loop": false,
+"name": &"rusty_blade_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_ynjmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_12dyj")
+}],
+"loop": true,
+"name": &"rusty_blade_run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eee3h"]
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qyg0"]
+size = Vector2(128, 144)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gvkkr")
+
+[node name="VisualsController" type="Node2D" parent="."]
+script = ExtResource("2_udscg")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="VisualsController"]
+sprite_frames = SubResource("SpriteFrames_ycwss")
+animation = &"stone_wall"
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="VisualsController"]
+sprite_frames = SubResource("SpriteFrames_63p81")
+animation = &"blade_attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eee3h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WeaponController" type="Node2D" parent="."]
+script = ExtResource("3_ak86g")
+
+[node name="MeleeHitbox" type="Area2D" parent="WeaponController"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponController/MeleeHitbox"]
+position = Vector2(88, 0)
+shape = SubResource("RectangleShape2D_2qyg0")
+
+[node name="AbilityController" type="Node2D" parent="."]
+script = ExtResource("4_57ay2")
+
+[node name="OrbSpawner" type="Node2D" parent="AbilityController"]
+
+[node name="WallSpawner" type="Node2D" parent="AbilityController"]
+
+[connection signal="body_entered" from="WeaponController/MeleeHitbox" to="WeaponController" method="_on_melee_hitbox_body_entered"]

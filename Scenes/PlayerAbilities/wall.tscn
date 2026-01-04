@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cca5h7jhflghq"]
+
+[ext_resource type="Script" path="res://Scenes/PlayerAbilities/wall.gd" id="1_1miam"]
+[ext_resource type="Texture2D" uid="uid://0s1tnv7rkhyp" path="res://icon.svg" id="1_bym7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxx1l"]
+size = Vector2(176, 176)
+
+[node name="wall" type="StaticBody2D"]
+script = ExtResource("1_1miam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_bym7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oxx1l")

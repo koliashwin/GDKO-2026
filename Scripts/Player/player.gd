@@ -7,12 +7,18 @@ extends CharacterBody2D
 @export var JUMP_FACTOR: float = 1;
 var can_double_jump: bool = true;
 
+@export var MAX_HEALTH: int = 10
+var health: int
+
 @export var GRAVITY: int = 980;
 
 @onready var weapon_controller: Node2D = $WeaponController
+@onready var ability_controller: Node2D = $AbilityController
 
 func _ready() -> void:
 	add_to_group("Player")
+	
+	health = MAX_HEALTH
 
 func _physics_process(delta: float) -> void:
 	var direction: int = Input.get_axis("move_left", "move_right")
@@ -21,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	apply_gravity()
 	jump()
 	attack()
+	ability()
 	
 	switch_loadout()
 	move_and_slide()
@@ -51,6 +58,19 @@ func attack() -> void:
 	if Input.is_action_just_pressed("attack"):
 		weapon_controller.attack()
 
+func ability() -> void:
+	if Input.is_action_just_pressed("ability"):
+		ability_controller.use_ability()
+
+func took_damage(amount = 1) -> void:
+	health -= amount
+	
+	velocity.y = -800
+	print("Current health : ", health)
+	if health <= 0:
+		print("Player Died")
+		queue_free()
+	
 func switch_loadout() -> void:
 	# temporary logic to change loadout with button input
 	
@@ -65,3 +85,8 @@ func switch_loadout() -> void:
 	# swithc gadget
 	if Input.is_action_just_pressed("switch_gadget"):
 		PlayerStats.next_gadget()
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemies"):
+		took_damage()
